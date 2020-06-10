@@ -1,0 +1,29 @@
+{
+  "name": "test-cfx-walletconnect-client",
+  "version": "0.0.0-rc.1",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "license": "MIT",
+  "scripts": {
+    "clean": "rm -rf dist",
+    "build": "rm -rf ./dist/* && npx tsc -p tsconfig.json"
+  },
+  "devDependencies": {
+    "@babel/cli": "7.8.3",
+    "babel-loader": "^8.1.0",
+    "@babel/core": "^7.10.2",
+    "@babel/polyfill": "7.8.3",
+    "@babel/preset-env": "^7.10.2",
+    "webpack": "4.41.5",
+    "webpack-cli": "3.3.10",
+    "typescript": "3.7.5",
+    "@walletconnect/core": "^1.0.0-rc.2",
+    "@walletconnect/browser-crypto": "^1.0.0-rc.2",
+    "@walletconnect/utils": "^1.0.0-rc.2"
+  },
+  "peerDependencies": {
+    "@walletconnect/core": "^1.0.0-rc.2",
+    "@walletconnect/browser-crypto": "^1.0.0-rc.2",
+    "@walletconnect/utils": "^1.0.0-rc.2"
+  }
+}
