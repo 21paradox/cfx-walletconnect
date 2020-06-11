@@ -46,14 +46,14 @@ class WalletConnectCfx extends WalletConnect {
     return result;
   }
 
-  async signMessage(params) {
+  async signMessage(msg) {
     if (!this.connected) {
       throw new Error(ERROR_SESSION_DISCONNECTED);
     }
 
     const request = this._formatRequest({
       method: "cfx_sign",
-      params,
+      params: msg,
     });
 
     const result = await this._sendCallRequest(request);

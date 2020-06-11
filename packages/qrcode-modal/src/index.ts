@@ -1,5 +1,6 @@
 import * as nodeLib from "./node";
 import * as browserLib from "./browser";
+import { mRegistry } from './browser/components/DeepLinkDisplay'
 
 const isNode = () =>
   typeof process !== "undefined" &&
@@ -22,4 +23,11 @@ function close() {
   }
 }
 
-export default { open, close };
+function updateMobileRegistry(registry: any) {
+  mRegistry.splice(0, mRegistry.length);
+  registry.forEach((v: any) => {
+    mRegistry.push(v);
+  })
+}
+
+export default { open, close, updateMobileRegistry };

@@ -2,7 +2,8 @@
 import * as React from "react";
 import MobileRegistry from "@walletconnect/mobile-registry";
 import { IMobileRegistryEntry } from "@walletconnect/types";
-import { isIOS, deeplinkChoiceKey, setLocal } from "@walletconnect/utils";
+import { isIOS, setLocal } from "@walletconnect/utils";
+const deeplinkChoiceKey = 'cfx-WALLETCONNECT_DEEPLINK_CHOICE'
 
 import { DEFAULT_BUTTON_COLOR, WALLETCONNECT_CTA_TEXT_ID } from "../constants";
 
@@ -37,6 +38,15 @@ interface DeepLinkDisplayProps {
   uri: string;
 }
 
+export const mRegistry: any = [];
+
+function getMobileRegistry() {
+  if (mRegistry.length) {
+    return mRegistry;
+  }
+  return MobileRegistry;
+}
+
 function DeepLinkDisplay(props: DeepLinkDisplayProps) {
   const ios = isIOS();
   return (
@@ -46,7 +56,7 @@ function DeepLinkDisplay(props: DeepLinkDisplayProps) {
       </p>
       <div className={`walletconnect-connect__buttons__wrapper${!ios && "__android"}`}>
         {ios ? (
-          MobileRegistry.map((entry: IMobileRegistryEntry) => {
+          getMobileRegistry().map((entry: IMobileRegistryEntry) => {
             const { color, name, logo } = entry;
             const href = formatIOSDeepLink(props.uri, entry);
             const handleClickIOS = React.useCallback(e => {

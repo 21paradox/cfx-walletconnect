@@ -1,5 +1,5 @@
 {
-  "name": "test-cfx-walletconnect",
+  "name": "cfx-walletconnect",
   "private": false,
   "scripts": {
     "bootstrap": "yarn && lerna bootstrap",
@@ -7,9 +7,9 @@
     "publish": "lerna publish"
   },
   "devDependencies": {
-    "lerna": "^3.22.1",
     "@typescript-eslint/eslint-plugin": "2.20.0",
-    "@typescript-eslint/parser": "2.20.0"
+    "@typescript-eslint/parser": "2.20.0",
+    "lerna": "^3.22.1"
   },
   "dependencies": {
     "typescript": "3.7.5"

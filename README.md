@@ -1,7 +1,9 @@
-# cfx-walletconnect-client
+# cfx-walletconnect
 
-**[WalletConnect]** client for Conflux Network.
 
+## cfx-walletconnect-client
+
+**[WalletConnect](https://swiperjs.com)** client for Conflux Network.
 
 ### Example
 - [test Wallet](https://test-cfx-webwallet-connect.now.sh/)
@@ -42,8 +44,32 @@ call cfx_signTransaction to remote wallet
 call cfx_sign to remote wallet
 
 
-### Changelog
+<br/>
+<br/>
 
-### License
+## WalletConnect QR Code Modal in Conflux Network
 
-[MIT]
+QR Code Modal for WalletConnect in Conflux network
+
+```js
+import WalletConnectQRCodeModal from "test-cfx-walletconnect-qrcode-modal";
+
+/**
+ *  Get URI from WalletConnect object
+ */
+const uri = connector.uri;
+
+WalletConnectQRCodeModal.updateMobileRegistry({
+  // custom wallet registry
+})
+
+/**
+ *  Open QR Code Modal
+ */
+WalletConnectQRCodeModal.open(uri);
+
+/**
+ *  Close QR Code Modal
+ */
+WalletConnectQRCodeModal.close();
+```
