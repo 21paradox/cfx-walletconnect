@@ -82,13 +82,19 @@ export default class HttpProvider {
           .send(data);
       }
       if (res.body.result === null) {
-        await wait(1500)
+        await wait(3000)
         res = await superagent
           .post(this.url)
           .send(data);
       }
       if (res.body.result === null) {
-        await wait(1500)
+        await wait(3000)
+        res = await superagent
+          .post(this.url)
+          .send(data);
+      }
+      if (res.body.result === null) {
+        await wait(3000)
         res = await superagent
           .post(this.url)
           .send(data);
