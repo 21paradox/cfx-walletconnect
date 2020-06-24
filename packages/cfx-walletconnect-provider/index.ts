@@ -94,7 +94,7 @@ export default class HttpProvider {
           .send(data);
       }
       if (res.body.result === null) {
-        await wait(3000)
+        await wait(6000)
         res = await superagent
           .post(this.url)
           .send(data);
