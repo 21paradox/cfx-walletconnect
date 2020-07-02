@@ -57,7 +57,7 @@ export default class HttpProvider {
   public async call(method: string, ...params: any): Promise<any> {
     const data = { jsonrpc: '2.0', id: this.requestId(), method, params };
 
-    if (method === 'cfx_sendTransaction') {
+    if (method === 'cfx_sendTransaction' || method === 'send_transaction') {
       const customRequest = {
         id: this.requestId(),
         jsonrpc: "2.0",
