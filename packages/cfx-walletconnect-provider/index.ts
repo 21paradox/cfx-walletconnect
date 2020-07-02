@@ -62,7 +62,9 @@ export default class HttpProvider {
         id: this.requestId(),
         jsonrpc: "2.0",
         method: 'cfx_signTransaction',
-        params,
+        params: [
+          params[0]
+        ],
       };
       // sign typed data
       const signResult = await this.connector.sendCustomRequest(customRequest);
